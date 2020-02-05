@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_05_044449) do
+ActiveRecord::Schema.define(version: 2020_02_05_045923) do
 
   create_table "actnesses", force: :cascade do |t|
     t.integer "ball_type"
@@ -29,6 +29,17 @@ ActiveRecord::Schema.define(version: 2020_02_05_044449) do
     t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "runnings", force: :cascade do |t|
+    t.integer "place"
+    t.integer "base_id"
+    t.integer "go_counts"
+    t.string "reason"
+    t.integer "Situation_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["Situation_id"], name: "index_runnings_on_Situation_id"
   end
 
   create_table "situations", force: :cascade do |t|

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Runnings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Place</th>
+      <th>Base</th>
+      <th>Go counts</th>
+      <th>Reason</th>
+      <th>Situation</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @runnings.each do |running| %>
+      <tr>
+        <td><%= running.place %></td>
+        <td><%= running.base_id %></td>
+        <td><%= running.go_counts %></td>
+        <td><%= running.reason %></td>
+        <td><%= running.Situation %></td>
+        <td><%= link_to 'Show', running %></td>
+        <td><%= link_to 'Edit', edit_running_path(running) %></td>
+        <td><%= link_to 'Destroy', running, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Running', new_running_path %>
