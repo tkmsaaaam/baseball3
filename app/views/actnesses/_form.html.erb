@@ -1,0 +1,47 @@
+<%= form_with(model: actness, local: true) do |form| %>
+  <% if actness.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(actness.errors.count, "error") %> prohibited this actness from being saved:</h2>
+
+      <ul>
+      <% actness.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :ball_type %>
+    <%= form.number_field :ball_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :swing %>
+    <%= form.check_box :swing %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ball %>
+    <%= form.check_box :ball %>
+  </div>
+
+  <div class="field">
+    <%= form.label :strike %>
+    <%= form.check_box :strike %>
+  </div>
+
+  <div class="field">
+    <%= form.label :foul %>
+    <%= form.check_box :foul %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ball_strike %>
+    <%= form.number_field :ball_strike %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

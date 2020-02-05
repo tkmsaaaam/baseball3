@@ -1,0 +1,2 @@
+class Actness < ApplicationRecord
+end

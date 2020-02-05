@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Actnesses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ball type</th>
+      <th>Swing</th>
+      <th>Ball</th>
+      <th>Strike</th>
+      <th>Foul</th>
+      <th>Ball strike</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @actnesses.each do |actness| %>
+      <tr>
+        <td><%= actness.ball_type %></td>
+        <td><%= actness.swing %></td>
+        <td><%= actness.ball %></td>
+        <td><%= actness.strike %></td>
+        <td><%= actness.foul %></td>
+        <td><%= actness.ball_strike %></td>
+        <td><%= link_to 'Show', actness %></td>
+        <td><%= link_to 'Edit', edit_actness_path(actness) %></td>
+        <td><%= link_to 'Destroy', actness, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Actness', new_actness_path %>
