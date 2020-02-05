@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bat_counts: 1
+  inings: 1
+  Game: one
+
+two:
+  bat_counts: 1
+  inings: 1
+  Game: two

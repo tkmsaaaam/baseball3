@@ -10,12 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_05_020843) do
+ActiveRecord::Schema.define(version: 2020_02_05_030308) do
 
   create_table "games", force: :cascade do |t|
     t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "situations", force: :cascade do |t|
+    t.integer "bat_counts"
+    t.integer "inings"
+    t.integer "Game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["Game_id"], name: "index_situations_on_Game_id"
   end
 
 end

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Bat counts:</strong>
+  <%= @situation.bat_counts %>
+</p>
+
+<p>
+  <strong>Inings:</strong>
+  <%= @situation.inings %>
+</p>
+
+<p>
+  <strong>Game:</strong>
+  <%= @situation.Game %>
+</p>
+
+<%= link_to 'Edit', edit_situation_path(@situation) %> |
+<%= link_to 'Back', situations_path %>
