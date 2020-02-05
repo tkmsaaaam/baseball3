@@ -1,2 +1,0 @@
-class Actness < ApplicationRecord
-end
