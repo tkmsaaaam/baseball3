@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :runnings
   resources :actnesses
   resources :situations
   resources :games
