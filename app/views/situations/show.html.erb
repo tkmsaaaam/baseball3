@@ -12,10 +12,11 @@
 
 <p>
   <strong>Game:</strong>
-  <%= @situation.Game %>
+  <%= @situation.Game_id %>
 </p>
 
 <%= link_to 'Edit', edit_situation_path(@situation) %> |
-<%= link_to 'Back', situations_path %>
+<%= link_to 'Back', situations_path %>|
 
-<%= link_to 'Go_to_Actness', new_actness_path %>
+<%= link_to 'Add_to_Actness', new_actness_path %>|
+<%= link_to 'Go_to_Actness',actnesses_path %>
