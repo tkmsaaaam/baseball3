@@ -11,5 +11,5 @@
 
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>|
-<%= link_to 'Add_to_Situation', new_situation_path %>|
+<%= link_to 'Add_to_Situation', new_situation_path(game_id: @game.id) %>|
 <%= link_to 'Go_to_Situation',situations_path %>
