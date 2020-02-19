@@ -19,10 +19,10 @@ ActiveRecord::Schema.define(version: 2020_02_05_045923) do
     t.boolean "strike"
     t.boolean "foul"
     t.integer "ball_strike"
-    t.integer "Situation_id"
+    t.integer "situation_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["situation_id"], name: "index_actnesses_on_situation_id"
+    t.index ["situation_id"], name: "index_actnesses_on_Situation_id"
   end
 
   create_table "games", force: :cascade do |t|
@@ -36,19 +36,19 @@ ActiveRecord::Schema.define(version: 2020_02_05_045923) do
     t.integer "base_id"
     t.integer "go_counts"
     t.string "reason"
-    t.integer "Situation_id"
+    t.integer "situation_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["situation_id"], name: "index_runnings_on_situation_id"
+    t.index ["situation_id"], name: "index_runnings_on_Situation_id"
   end
 
   create_table "situations", force: :cascade do |t|
     t.integer "bat_counts"
     t.integer "inings"
-    t.integer "Game_id"
+    t.integer "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["game_id"], name: "index_situations_on_game_id"
+    t.index ["game_id"], name: "index_situations_on_Game_id"
   end
 
 end

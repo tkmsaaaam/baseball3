@@ -16,7 +16,7 @@ class SituationsController < ApplicationController
   def new
     puts params[:game_id]
     game = Game.find(params[:game_id])
-    @situation = Situation.new(Game_id: params[:game_id])
+    @situation = Situation.new(game_id: params[:game_id])
   end
 
   # GET /situations/1/edit
