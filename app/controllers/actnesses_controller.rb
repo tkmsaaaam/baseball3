@@ -69,6 +69,6 @@ class ActnessesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def actness_params
-      params.require(:actness).permit(:ball_type, :swing, :ball, :strike, :foul, :ball_strike, :Situation_id)
+      params.require(:actness).permit(:ball_type, :swing, :ball, :strike, :foul, :ball_strike, :situation_id)
     end
 end

@@ -71,6 +71,6 @@ class SituationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def situation_params
-      params.require(:situation).permit(:bat_counts, :inings, :Game_id)
+      params.require(:situation).permit(:bat_counts, :inings, :game_id)
     end
 end

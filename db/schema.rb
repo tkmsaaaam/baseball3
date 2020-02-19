@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2020_02_05_045923) do
     t.integer "Situation_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["Situation_id"], name: "index_actnesses_on_Situation_id"
+    t.index ["situation_id"], name: "index_actnesses_on_situation_id"
   end
 
   create_table "games", force: :cascade do |t|
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2020_02_05_045923) do
     t.integer "Situation_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["Situation_id"], name: "index_runnings_on_Situation_id"
+    t.index ["situation_id"], name: "index_runnings_on_situation_id"
   end
 
   create_table "situations", force: :cascade do |t|
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2020_02_05_045923) do
     t.integer "Game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["Game_id"], name: "index_situations_on_Game_id"
+    t.index ["game_id"], name: "index_situations_on_game_id"
   end
 
 end

@@ -69,6 +69,6 @@ class RunningsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def running_params
-      params.require(:running).permit(:place, :base_id, :go_counts, :reason, :Situation_id)
+      params.require(:running).permit(:place, :base_id, :go_counts, :reason, :situation_id)
     end
 end
