@@ -37,5 +37,5 @@
 
 <%= link_to 'Edit', edit_actness_path(@actness) %> |
 <%= link_to 'Back', actnesses_path %> |
-<%= link_to 'Repeat_Batting', new_actness_path %> |
+<%= link_to 'Repeat_Batting', new_actness_path(situation_id: @actness.situation_id) %> |
 <%= link_to 'Go_to_Running', new_running_path %>
