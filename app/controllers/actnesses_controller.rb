@@ -17,6 +17,7 @@ class ActnessesController < ApplicationController
     puts params[:situation_id]
     situation = Situation.find(params[:situation_id])
     @actness = Actness.new(situation_id: params[:situation_id])
+    @situation = Situation.find(params[:situation_id])
   end
 
   # GET /actnesses/1/edit

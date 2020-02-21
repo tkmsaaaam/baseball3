@@ -1,3 +1,11 @@
+<p>
+  <strong>Inings:</strong>
+  <%= @situation.inings%>
+</p>
+<p>
+  <strong>Bat_Count:</strong>
+  <%= @situation.bat_counts%>
+</p>
 <%= form_with(model: running, local: true) do |form| %>
   <% if running.errors.any? %>
     <div id="error_explanation">

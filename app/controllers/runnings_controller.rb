@@ -17,6 +17,7 @@ class RunningsController < ApplicationController
     puts params[:situation_id]
     actness =Actness.find(params[:situation_id])
     @running = Running.new(situation_id: params[:situation_id])
+    @situation = Situation.find(params[:situation_id])
   end
 
   # GET /runnings/1/edit
