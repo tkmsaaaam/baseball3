@@ -22,14 +22,15 @@
   <div class="field">
     <%= form.label :place %>
     <%= form.number_field :place %>
+    <p>Before Place(Base)</p>
   </div>
-  <p>Before Place(Base)</p>
+
 
   <div class="field">
     <%= form.label :base_id %>
     <%= form.number_field :base_id %>
+    <p>After Place(Base)</p>
   </div>
-  <p>After Place(Base)</p>
 
   <div class="field">
     <%= form.label :go_counts %>
@@ -42,8 +43,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :situation_id %>
-    <%= form.text_field :situation_id %>
+    <%= form.hidden_field :situation_id %>
   </div>
 
   <div class="actions">
