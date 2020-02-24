@@ -16,7 +16,7 @@ class SituationsController < ApplicationController
   def new
     puts params[:game_id]
     game = Game.find(params[:game_id])
-    @situation = Situation.new(game_id: params[:game_id])
+    @situation = Situation.new(game_id: params[:game_id],bat_counts: 1,inings: 1)
     @game = Game.find(params[:game_id])
   end
 
@@ -38,6 +38,7 @@ class SituationsController < ApplicationController
         format.json { render json: @situation.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # PATCH/PUT /situations/1
