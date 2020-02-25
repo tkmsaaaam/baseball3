@@ -5,9 +5,9 @@
 <table>
   <thead>
     <tr>
+      <th>Game</th>
       <th>Bat counts</th>
       <th>Inings</th>
-      <th>Game</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,9 +15,9 @@
   <tbody>
     <% @situations.each do |situation| %>
       <tr>
+        <td><%= situation.game_id %></td>
         <td><%= situation.bat_counts %></td>
         <td><%= situation.inings %></td>
-        <td><%= situation.game_id %></td>
         <td><%= link_to 'Show', situation %></td>
         <td><%= link_to 'Edit', edit_situation_path(situation) %></td>
         <td><%= link_to 'Destroy', situation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
