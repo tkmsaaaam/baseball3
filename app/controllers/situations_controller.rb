@@ -34,7 +34,7 @@ class SituationsController < ApplicationController
         format.html { redirect_to @situation, notice: 'Situation was successfully created.' }
         format.json { render :show, status: :created, location: @situation }
       else
-        format.html { render :new }
+        format.html { redirect_to @situation}
         format.json { render json: @situation.errors, status: :unprocessable_entity }
       end
     end

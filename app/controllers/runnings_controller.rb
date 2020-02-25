@@ -34,7 +34,7 @@ class RunningsController < ApplicationController
         format.html { redirect_to @running, notice: 'Running was successfully created.' }
         format.json { render :show, status: :created, location: @running }
       else
-        format.html { render :new }
+        format.html { redirect_to @running }
         format.json { render json: @running.errors, status: :unprocessable_entity }
       end
     end

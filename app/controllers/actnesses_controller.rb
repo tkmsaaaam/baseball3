@@ -34,7 +34,7 @@ class ActnessesController < ApplicationController
         format.html { redirect_to @actness, notice: 'Actness was successfully created.' }
         format.json { render :show, status: :created, location: @actness }
       else
-        format.html { render :new }
+        format.html { redirect_to @actness}
         format.json { render json: @actness.errors, status: :unprocessable_entity }
       end
     end
