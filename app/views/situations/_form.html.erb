@@ -26,6 +26,38 @@
     <%= form.hidden_field:game_id %>
   </div>
 
+  <hr>
+
+  <div class="field">
+    <%= form.label :actness_results %>
+    <%= form.number_field :actness_results %>
+  </div>
+  <div class="field">
+    <%= form.label :where_go %>
+    <%= form.number_field :where_go %>
+  </div>
+  <div class="field">
+    <%= form.label :ball_counts %>
+    <%= form.number_field :ball_counts %>
+  </div>
+  <div class="field">
+    <%= form.label :ball_strike %>
+    <%= form.number_field :ball_strike %>
+  </div>
+  <div class="field">
+    <%= form.label :rbi %>
+    <%= form.number_field :rbi %>
+  </div>
+
+  <div class="field">
+    <%= form.label :steal_counts %>
+    <%= form.number_field :steal_counts %>
+  </div>
+  <div class="field">
+    <%= form.label :score %>
+    <%= form.check_box :score %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
