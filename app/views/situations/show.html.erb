@@ -14,6 +14,34 @@
   <strong>Game:</strong>
   <%= @situation.game_id %>
 </p>
+<p>
+  <strong>Results:</strong>
+  <%= @situation.actness_results %>
+</p>
+<p>
+  <strong>Where_Go:</strong>
+  <%= @situation.where_go %>
+</p>
+<p>
+  <strong>ball_counts:</strong>
+  <%= @situation.ball_counts %>
+</p>
+<p>
+  <strong>ball_strike:</strong>
+  <%= @situation.ball_strike %>
+</p>
+<p>
+  <strong>rbi:</strong>
+  <%= @situation.rbi %>
+</p>
+<p>
+  <strong>steal_counts:</strong>
+  <%= @situation.steal_counts %>
+</p>
+<p>
+  <strong>score:</strong>
+  <%= @situation.score %>
+</p>
 
 <%= link_to 'Edit', edit_situation_path(@situation) %> |
 <%= link_to 'Back', situations_path %>|
