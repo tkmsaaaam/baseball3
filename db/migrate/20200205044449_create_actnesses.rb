@@ -7,7 +7,7 @@ class CreateActnesses < ActiveRecord::Migration[5.2]
       t.boolean :strike
       t.boolean :foul
       t.integer :ball_strike
-      t.references :Situation, foreign_key: true
+      t.references :situation, foreign_key: true
 
       t.timestamps
     end
