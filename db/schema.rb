@@ -45,6 +45,13 @@ ActiveRecord::Schema.define(version: 2020_02_26_104059) do
   create_table "situations", force: :cascade do |t|
     t.integer "bat_counts"
     t.integer "inings"
+    t.string "actness_results"
+    t.integer "where_go"
+    t.integer "ball_counts"
+    t.integer "ball_strike"
+    t.integer "rbi"
+    t.integer "steal_counts"
+    t.boolean "score"
     t.integer "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
