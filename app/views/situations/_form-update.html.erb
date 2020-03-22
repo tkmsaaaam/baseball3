@@ -4,9 +4,9 @@
       <h2><%= pluralize(situation.errors.count, "error") %> prohibited this situation from being saved:</h2>
 
       <ul>
-      <% situation.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% situation.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -26,32 +26,36 @@
     <%= form.hidden_field:game_id %>
   </div>
 
+  <hr>
+
   <div class="field">
-    <%= form.hidden_field :actness_results %>
+    <%= form.label :actness_results %>
+    <%= form.text_field :actness_results %>
+  </div>
+  <div class="field">
+    <%= form.label :where_go %>
+    <%= form.number_field :where_go %>
+  </div>
+  <div class="field">
+    <%= form.label :ball_counts %>
+    <%= form.number_field :ball_counts %>
+  </div>
+  <div class="field">
+    <%= form.label :ball_strike %>
+    <%= form.number_field :ball_strike %>
+  </div>
+  <div class="field">
+    <%= form.label :rbi %>
+    <%= form.number_field :rbi %>
   </div>
 
   <div class="field">
-    <%= form.hidden_field :where_go %>
+    <%= form.label :steal_counts %>
+    <%= form.number_field :steal_counts %>
   </div>
-
   <div class="field">
-    <%= form.hidden_field :ball_counts %>
-  </div>
-
-  <div class="field">
-    <%= form.hidden_field :ball_strike %>
-  </div>
-
-  <div class="field">
-    <%= form.hidden_field :rbi %>
-  </div>
-
-  <div class="field">
-    <%= form.hidden_field :steal_counts %>
-  </div>
-
-  <div class="field">
-    <%= form.hidden_field :score %>
+    <%= form.label :score %>
+    <%= form.check_box :score %>
   </div>
 
   <div class="actions">
