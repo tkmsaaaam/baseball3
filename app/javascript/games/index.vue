@@ -38,11 +38,14 @@
                     .then(res => {
                         this.games = res.data
                     })
-            }
+            },
             methods: {
                 destroyGame(id) {
                     axios.delete('/api/v1/games/' + id)
                     .then(res => {
+                        if (res.status === 200) {
+                            this.games = reject(this.games, ['id', id]);
+                        }
                     });
                 }
             }
