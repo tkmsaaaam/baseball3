@@ -34,7 +34,7 @@
                 }
             },
             created(){
-                axios.get('api/v1/games')
+                axios.get('/api/v1/games')
                     .then(res => {
                         this.games = res.data
                     })
