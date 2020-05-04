@@ -24,6 +24,7 @@
         </el-table-column>
     </el-table>
 </template>
+
 <script>
     import axios from 'axios'
     import {reject} from 'lodash';

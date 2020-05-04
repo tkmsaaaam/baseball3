@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   namespace :api, { format: 'json'} do
     namespace :v1 do
       resources :games
+      resources :situations
+      resources :actnesses
+      resources :runnings
     end
   end
 end
