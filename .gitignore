@@ -6,6 +6,18 @@
 
 # Ignore bundler config.
 /.bundle
+/vendor/bundler/
+/log/*.log
+/tmp
+/uploads/tmp/
+/config/settings.local.yml
+/config/settings/*.local.yml
+/config/environments/*.local.yml
+/config/secrets.yml
+/config/database.yml
+
+.pryrc
+.DS_Store
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
@@ -29,3 +41,10 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
