@@ -1,1 +1,1 @@
-json.partial! "actnesses/actness", actness: @actness
+json.partial! 'actnesses/actness', actness: @actness

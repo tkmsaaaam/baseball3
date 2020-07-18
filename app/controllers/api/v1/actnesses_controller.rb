@@ -5,8 +5,6 @@ class Api::V1::ActnessesController < ActionController::API
 
   def destroy
     actness = Actness.find_by(id: params[:id])
-    if actness.destroy
-      render status: 200, json: { status: 200 }
-    end
+    render status: 200, json: { status: 200 } if actness.destroy
   end
 end

@@ -1,1 +1,1 @@
-json.array! @situations, partial: "situations/situation", as: :situation
+json.array! @situations, partial: 'situations/situation', as: :situation

@@ -5,8 +5,6 @@ class Api::V1::SituationsController < ActionController::API
 
   def destroy
     situation = Situation.find_by(id: params[:id])
-    if situation.destroy
-      render status: 200, json: { status: 200 }
-    end
+    render status: 200, json: { status: 200 } if situation.destroy
   end
 end

@@ -1,5 +1,5 @@
 class ActnessesController < ApplicationController
-  before_action :set_actness, only: [:show, :edit, :update, :destroy]
+  before_action :set_actness, only: %i[show edit update destroy]
 
   # GET /actnesses
   # GET /actnesses.json
@@ -9,20 +9,18 @@ class ActnessesController < ApplicationController
 
   # GET /actnesses/1
   # GET /actnesses/1.json
-  def show
-  end
+  def show; end
 
   # GET /actnesses/new
   def new
     puts params[:situation_id]
     situation = Situation.find(params[:situation_id])
-    @actness = Actness.new(situation_id: params[:situation_id],ball_type: 1,ball: true,ball_strike: 11)
+    @actness = Actness.new(situation_id: params[:situation_id], ball_type: 1, ball: true, ball_strike: 11)
     @situation = Situation.find(params[:situation_id])
   end
 
   # GET /actnesses/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /actnesses
   # POST /actnesses.json
@@ -34,7 +32,7 @@ class ActnessesController < ApplicationController
         format.html { redirect_to @actness, notice: 'Actness was successfully created.' }
         format.json { render :show, status: :created, location: @actness }
       else
-        format.html { redirect_to @actness}
+        format.html { redirect_to @actness }
         format.json { render json: @actness.errors, status: :unprocessable_entity }
       end
     end
@@ -65,13 +63,14 @@ class ActnessesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_actness
-      @actness = Actness.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def actness_params
-      params.require(:actness).permit(:ball_type, :swing, :ball, :strike, :foul, :ball_strike, :situation_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_actness
+    @actness = Actness.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def actness_params
+    params.require(:actness).permit(:ball_type, :swing, :ball, :strike, :foul, :ball_strike, :situation_id)
+  end
 end
