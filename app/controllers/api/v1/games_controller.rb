@@ -1,6 +1,7 @@
 class Api::V1::GamesController < ActionController::API
   def index
-    @games = Game.all
+    games = Game.select(:id, :created_at)
+    render json: games
   end
 
   def destroy
