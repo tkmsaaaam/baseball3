@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Api::V1::ActnessesController < ActionController::API
   def index
     @actnesses = Actness.all

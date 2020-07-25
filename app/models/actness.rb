@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Actness < ApplicationRecord
   belongs_to :situation
   validates :ball_type, presence: true, length: { maximum: 2 }

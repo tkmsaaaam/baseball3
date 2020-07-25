@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Situation < ApplicationRecord
   belongs_to :game
   validates :bat_counts, presence: true, length: { maximum: 2 }

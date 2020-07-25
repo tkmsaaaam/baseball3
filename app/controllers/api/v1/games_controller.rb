@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Api::V1::GamesController < ActionController::API
   def index
     @games = Game.all

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ActnessesController < ApplicationController
   before_action :set_actness, only: %i[show edit update destroy]
 

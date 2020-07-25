@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Running < ApplicationRecord
   belongs_to :situation
   validates :place, presence: true, length: { maximum: 1 }

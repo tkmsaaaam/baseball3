@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SituationsController < ApplicationController
   before_action :set_situation, only: %i[show edit update destroy]
 
