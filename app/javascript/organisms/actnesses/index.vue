@@ -1,79 +1,50 @@
 <template>
-    <el-table
-        :data="actnesses"
-        style="width: 100%">
-        <el-table-column
-            prop="ball_type"
-            label="BallType"
-            width="120">
-        </el-table-column>
-        <el-table-column
-            prop="swing"
-            label="Swing"
-            width="120">
-        </el-table-column>
-        <el-table-column
-            prop="ball"
-            label="Ball"
-            width="120">
-        </el-table-column>
-        <el-table-column
-            prop="strike"
-            label="Strike"
-            width="120">
-        </el-table-column>
-        <el-table-column
-            prop="foul"
-            label="Foul"
-            width="120">
-        </el-table-column>
-        <el-table-column
-            prop="ball_strike"
-            label="BallStrike"
-            width="120">
-        </el-table-column>
-        <el-table-column
-            prop="situation_id"
-            label="SituationId"
-            width="120">
-        </el-table-column>
-        <el-table-column
-            width="120">
-            <template v-slot="scope">
-                <el-button
-                    @click="destroyActness(scope.row.id)"
-                    type="danger"
-                    icon="el-icon-delete"
-                    circle></el-button>
-            </template>
-        </el-table-column>
-    </el-table>
+    <div id="app">
+        <table>
+            <tbody>
+            <tr>
+                <th>ID</th>
+                <th>Ball Type</th>
+                <th>Swing</th>
+                <th>Ball</th>
+                <th>Strike</th>
+                <th>Foul</th>
+                <th>Ball Strike</th>
+            </tr>
+            <tr v-for="e in actnesses" :key="e.id">
+                <td>{{ e.id }}</td>
+                <td>{{ e.ball_type }}</td>
+                <td>{{ e.swing }}</td>
+                <td>{{ e.ball }}</td>
+                <td>{{ e.strike }}</td>
+                <td>{{ e.foul }}</td>
+                <td>{{ e.ball_strike }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </template>
 
 <script>
-    import axios from 'axios'
-    import {reject} from 'lodash';
-        export default {
-            data () {
-                return {
-                    actnesses: []
-                }
-            },
-            created(){
-                axios.get('/api/v1/actnesses')
-                    .then(res => {
-                        this.actnesses = res.data
-                    })
-            },
-            methods: {
-                destroyActness(id) {
-                    axios.delete('/api/v1/actnesses/' + id)
-                    .then(res => {
-                        if (res.status === 200 ) {
-                            this.actnesses = reject(this.actnesses, ['id', id]);
-                        }
-                    });
-                }
+    import axios from 'axios';
+
+    export default {
+        data: function () {
+            return {
+                actnesses: []
             }
+        },
+        mounted () {
+            axios
+                .get('/api/v1/actnesses.json')
+                .then(response => (this.actnesses = response.data))
         }
+    }
 </script>
+
+<style scoped>
+    p {
+        font-size: 2em;
+        text-align: center;
+    }
+</style>

@@ -2,7 +2,8 @@
 
 class Api::V1::ActnessesController < ActionController::API
   def index
-    @actnesses = Actness.all
+    actnesses = Actness.select(:id, :ball_type, :swing, :ball, :strike, :foul, :ball_strike)
+    render json: actnesses
   end
 
   def destroy

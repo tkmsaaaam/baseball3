@@ -2,7 +2,8 @@
 
 class Api::V1::RunningsController < ActionController::API
   def index
-    @runnings = Running.all
+    runnings = Running.select(:id, :place, :base_id, :go_counts, :reason)
+    render json: runnings
   end
 
   def destroy

@@ -1,54 +1,40 @@
 <template>
-    <el-table
-            :data="games"
-            style="width: 100%">
-        <el-table-column
-                prop="date"
-                label="Date"
-                width="180">
-        </el-table-column>
-        <el-table-column
-                prop="id"
-                label="ID"
-                width="180">
-        </el-table-column>
-        <el-table-column
-            width="120">
-            <template v-slot="scope">
-                <el-button
-                        @click="destroyGame(scope.row.id)"
-                        type="danger"
-                        icon="el-icon-delete"
-                        circle></el-button>
-            </template>
-        </el-table-column>
-    </el-table>
+    <div id="app">
+        <table>
+            <tbody>
+            <tr>
+                <th>ID</th>
+                <th>CreatedAt</th>
+            </tr>
+            <tr v-for="e in games" :key="e.id">
+                <td>{{ e.id }}</td>
+                <td>{{ e.created_at }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </template>
 
 <script>
-    import axios from 'axios'
-    import {reject} from 'lodash';
-        export default {
-            data() {
-                return {
-                    games: []
-                }
-            },
-            created(){
-                axios.get('/api/v1/games')
-                    .then(res => {
-                        this.games = res.data
-                    })
-            },
-            methods: {
-                destroyGame(id) {
-                    axios.delete('/api/v1/games/' + id)
-                    .then(res => {
-                        if (res.status === 200) {
-                            this.games = reject(this.games, ['id', id]);
-                        }
-                    });
-                }
+    import axios from 'axios';
+
+    export default {
+        data: function () {
+            return {
+                games: []
             }
+        },
+        mounted () {
+            axios
+                .get('/api/v1/games.json')
+                .then(response => (this.games = response.data))
         }
+    }
 </script>
+
+<style scoped>
+    p {
+        font-size: 2em;
+        text-align: center;
+    }
+</style>
