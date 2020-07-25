@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 class RunningsControllerTest < ActionDispatch::IntegrationTest
@@ -5,17 +7,17 @@ class RunningsControllerTest < ActionDispatch::IntegrationTest
     @running = runnings(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get runnings_url
     assert_response :success
   end
 
-  test "should get new" do
+  test 'should get new' do
     get new_running_url
     assert_response :success
   end
 
-  test "should create running" do
+  test 'should create running' do
     assert_difference('Running.count') do
       post runnings_url, params: { running: { Situation_id: @running.Situation_id, base_id: @running.base_id, go_counts: @running.go_counts, place: @running.place, reason: @running.reason } }
     end
@@ -23,22 +25,22 @@ class RunningsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to running_url(Running.last)
   end
 
-  test "should show running" do
+  test 'should show running' do
     get running_url(@running)
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get edit_running_url(@running)
     assert_response :success
   end
 
-  test "should update running" do
+  test 'should update running' do
     patch running_url(@running), params: { running: { Situation_id: @running.Situation_id, base_id: @running.base_id, go_counts: @running.go_counts, place: @running.place, reason: @running.reason } }
     assert_redirected_to running_url(@running)
   end
 
-  test "should destroy running" do
+  test 'should destroy running' do
     assert_difference('Running.count', -1) do
       delete running_url(@running)
     end

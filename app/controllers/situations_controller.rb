@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class SituationsController < ApplicationController
-  before_action :set_situation, only: [:show, :edit, :update, :destroy]
+  before_action :set_situation, only: %i[show edit update destroy]
 
   # GET /situations
   # GET /situations.json
@@ -9,20 +11,18 @@ class SituationsController < ApplicationController
 
   # GET /situations/1
   # GET /situations/1.json
-  def show
-  end
+  def show; end
 
   # GET /situations/new
   def new
     puts params[:game_id]
     game = Game.find(params[:game_id])
-    @situation = Situation.new(game_id: params[:game_id],bat_counts: 1,inings: 1)
+    @situation = Situation.new(game_id: params[:game_id], bat_counts: 1, inings: 1)
     @game = Game.find(params[:game_id])
   end
 
   # GET /situations/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /situations
   # POST /situations.json
@@ -34,11 +34,10 @@ class SituationsController < ApplicationController
         format.html { redirect_to @situation, notice: 'Situation was successfully created.' }
         format.json { render :show, status: :created, location: @situation }
       else
-        format.html { redirect_to @situation}
+        format.html { redirect_to @situation }
         format.json { render json: @situation.errors, status: :unprocessable_entity }
       end
     end
-
   end
 
   # PATCH/PUT /situations/1
@@ -66,13 +65,14 @@ class SituationsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_situation
-      @situation = Situation.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def situation_params
-      params.require(:situation).permit(:bat_counts, :inings, :game_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_situation
+    @situation = Situation.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def situation_params
+    params.require(:situation).permit(:bat_counts, :inings, :game_id)
+  end
 end
