@@ -16,7 +16,6 @@ class ActnessesController < ApplicationController
   # GET /actnesses/new
   def new
     puts params[:situation_id]
-    situation = Situation.find(params[:situation_id])
     @actness = Actness.new(situation_id: params[:situation_id], ball_type: 1, ball: true, ball_strike: 11)
     @situation = Situation.find(params[:situation_id])
   end

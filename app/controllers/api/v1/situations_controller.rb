@@ -4,7 +4,8 @@ module Api
   module V1
     class SituationsController < ActionController::API
       def index
-        situations = Situation.select(:game_id, :bat_counts, :inings, :actness_results, :where_go, :ball_counts, :ball_strike, :steal_counts, :score)
+        situations = Situation.select(:game_id, :bat_counts, :inings, :actness_results, :where_go, :ball_counts,
+                                      :ball_strike, :steal_counts, :score)
         render json: situations
       end
 
@@ -15,4 +16,3 @@ module Api
     end
   end
 end
-
