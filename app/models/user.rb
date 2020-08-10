@@ -6,4 +6,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   ADMMIN_USER_IDS = [1].freeze
+
+  has_many :game
 end
