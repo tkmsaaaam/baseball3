@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  root to: "home#index"
+  devise_for :users
   get 'home/index'
   get '/', to: 'home#index'
   resources :games
