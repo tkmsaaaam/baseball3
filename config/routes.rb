@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root to: "home#index"
+  root to: 'home#index'
   devise_for :users
+  mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
   get 'home/index'
   get '/', to: 'home#index'
   resources :games
