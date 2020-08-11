@@ -8,4 +8,5 @@ class User < ApplicationRecord
   ADMMIN_USER_IDS = [1].freeze
 
   has_many :game
+  enum user_type: { normal: 1, admin: 10 }
 end
