@@ -9,7 +9,8 @@ class BasePolicy
   end
 
   private
-    def user_type_admin?
-      @user.admin?
-    end
+
+  def user_type_admin?
+    @user.admin?
+  end
 end
