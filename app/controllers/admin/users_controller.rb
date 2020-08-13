@@ -3,10 +3,12 @@
 module Admin
   class UsersController < ApplicationController
     before_action :set_user, only: %i[show edit update destroy]
-    before_action :check_user_role
+    before_action :check_authorize
 
     def index
       @users = User.all
+
+      redirect_to home_index_url unless @users.index
     end
 
     def show; end
@@ -50,6 +52,18 @@ module Admin
 
     def admin_access_denine
       redirect_to home_index_url
+    end
+
+    def check_authorize
+      return authorize @user if @user.present?
+
+      authorize :user
+    end
+
+    def authorize(record, query = nil, policy_class: nil)
+      return super([:admin, record].flatten, query) if policy_class.nil?
+
+      super(record, query, policy_class: policy_class)
     end
   end
 end

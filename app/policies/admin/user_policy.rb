@@ -1,11 +1,25 @@
 # frozen_string_literal: true
 
-class UserPolicy < ApplicationPolicy
-  def index?
-    false unless user.admin?
-  end
+module Admin
+  class UserPolicy < BasePolicy
+    def index?
+      user_type_admin?
+    end
 
-  def show?
-    false unless user.admin?
+    def show?
+      user_type_admin?
+    end
+
+    def edit?
+      user_type_admin?
+    end
+
+    def update?
+      user_type_admin?
+    end
+
+    def destroy?
+      user_type_admin?
+    end
   end
 end
