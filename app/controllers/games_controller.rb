@@ -2,6 +2,7 @@
 
 class GamesController < ApplicationController
   before_action :set_game, only: %i[show edit update destroy]
+  before_action :authenticate_user!, only: %i[new edit create update destroy]
 
   # GET /games
   # GET /games.json
