@@ -2,6 +2,7 @@
 
 class ActnessesController < ApplicationController
   before_action :set_actness, only: %i[show edit update destroy]
+  before_action :authenticate_user!, only: %i[new edit create update destroy]
 
   # GET /actnesses
   # GET /actnesses.json

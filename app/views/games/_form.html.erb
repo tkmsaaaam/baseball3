@@ -14,6 +14,11 @@
   <div class="field">
     <%= form.label :date %>
     <%= form.date_select :date %>
+    <% if current_user.admin? %>
+      <%= form.number_field :user_id, value: @user.id%>
+    <% else %>
+      <%= form.hidden_field :user_id, value: @user.id %>
+    <% end %>
   </div>
 
   <div class="actions">

@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<%= render 'application/header' %>
 
 <h1>Games</h1>
 
@@ -7,6 +7,7 @@
     <tr>
       <th>Date</th>
       <th>ID</th>
+      <th>USERID</th>
     </tr>
   </thead>
 
@@ -15,6 +16,7 @@
       <tr>
         <td><%= game.date %></td>
         <td><%= game.id %></td>
+        <td><%= game.user_id %></td>
         <td><%= link_to 'Show', game %></td>
         <td><%= link_to 'Edit', edit_game_path(game) %></td>
         <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>

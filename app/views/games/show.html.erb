@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<%= render 'application/header' %>
 
 <p>
   <strong>Date:</strong>
@@ -7,6 +7,10 @@
 <p>
   <strong>ID:</strong>
   <%= @game.id %>
+</p>
+<p>
+  <strong>USERID:</strong>
+  <%= @game.user_id %>
 </p>
 
 <%= link_to 'Edit', edit_game_path(@game) %> |

@@ -51,6 +51,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 
+  gem 'letter_opener_web'
   gem 'rubocop', require: false
 end
 
@@ -66,3 +67,7 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'webpacker', github: 'rails/webpacker'
+
+# for Authorize
+gem 'devise'
+gem 'pundit'

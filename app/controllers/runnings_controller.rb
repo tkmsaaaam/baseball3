@@ -2,6 +2,7 @@
 
 class RunningsController < ApplicationController
   before_action :set_running, only: %i[show edit update destroy]
+  before_action :authenticate_user!, only: %i[new edit create update destroy]
 
   # GET /runnings
   # GET /runnings.json

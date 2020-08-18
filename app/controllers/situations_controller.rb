@@ -2,6 +2,7 @@
 
 class SituationsController < ApplicationController
   before_action :set_situation, only: %i[show edit update destroy]
+  before_action :authenticate_user!, only: %i[new edit create update destroy]
 
   # GET /situations
   # GET /situations.json
