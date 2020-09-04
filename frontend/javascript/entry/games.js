@@ -1,8 +1,8 @@
-import App from "../app.vue";
+import GamesIndex from '../components/organisms/games/index.vue'
 import * as VueMounter from "../application.js"
 
 export const components = {
-    App
+    GamesIndex
 };
 
 VueMounter.mount(components);

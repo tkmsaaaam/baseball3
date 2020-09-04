@@ -1,8 +1,8 @@
-import App from "../app.vue";
+import RunningsIndex from '../components/organisms/runnings/index.vue'
 import * as VueMounter from "../application.js"
 
 export const components = {
-    App
+    RunningsIndex
 };
 
 VueMounter.mount(components);

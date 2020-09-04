@@ -1,4 +1,4 @@
 
 import Vue from 'vue'
-import GameIndex from '../../organisms/games/index.vue'
+import GameIndex from '../../../../frontend/javascript/components/organisms/games/index.vue'
 

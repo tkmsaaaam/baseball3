@@ -1,6 +1,6 @@
 
 import Vue from 'vue'
-import SituationIndex from '../../organisms/situations/index.vue'
+import SituationIndex from '../../../../frontend/javascript/components/organisms/situations/index.vue'
 
 document.addEventListener('DOMContentLoaded', () => {
     const el = document.body.appendChild(document.createElement('hello'))

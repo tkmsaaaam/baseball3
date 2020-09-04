@@ -1,8 +1,8 @@
-import App from "../app.vue";
+import SituationsIndex from '../components/organisms/situations/index.vue'
 import * as VueMounter from "../application.js"
 
 export const components = {
-    App
+    SituationsIndex
 };
 
 VueMounter.mount(components);
