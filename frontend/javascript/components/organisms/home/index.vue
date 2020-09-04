@@ -14,7 +14,7 @@
     </Modal>
 </template>
 <script>
-    import Modal from '../../molecules/Modal.vue';
+    import Modal from '../../../../../app/javascript/molecules/Modal.vue';
     export default {
         data: function () {
             return {

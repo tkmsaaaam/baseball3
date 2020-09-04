@@ -44,6 +44,7 @@
 
 /public/packs
 /public/packs-test
+/public/entry
 /node_modules
 /yarn-error.log
 yarn-debug.log*
