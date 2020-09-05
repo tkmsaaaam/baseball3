@@ -8,6 +8,11 @@ module Api
         render json: games
       end
 
+      def show
+        game = Game.select(:id, :created_at).find_by(id: params[:id])
+        render json: game
+      end
+
       def destroy
         game = Game.find_by(id: params[:id])
         render status: 200, json: { status: 200 } if game.destroy
