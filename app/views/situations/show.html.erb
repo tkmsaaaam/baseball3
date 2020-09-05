@@ -48,3 +48,6 @@
 
 <%= link_to 'Add_to_Actness', new_actness_path(situation_id: @situation.id)%>|
 <%= link_to 'Go_to_Actness',actnesses_path %>
+
+<%= javascript_pack_tag 'situations' %>
+<div data-vue="SituationShow" data-situation-id=<%= @situation.id %>></div>

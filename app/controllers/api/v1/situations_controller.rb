@@ -9,6 +9,12 @@ module Api
         render json: situations
       end
 
+      def show
+        situation = Situation.select(:game_id, :bat_counts, :inings, :actness_results, :where_go, :ball_counts,
+                                     :ball_strike, :steal_counts, :score).find_by(id: params[:id])
+        render json: situation
+      end
+
       def destroy
         situation = Situation.find_by(id: params[:id])
         render status: 200, json: { status: 200 } if situation.destroy
