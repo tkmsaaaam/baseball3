@@ -32,3 +32,5 @@
 <%= link_to 'Go_to_Games', new_game_path %>|
 <%= link_to 'Add_to_Performance',edit_situation_path(id: @running.situation_id) %>
 
+<%= javascript_pack_tag 'runnings' %>
+<div data-vue="RunningShow" data-running-id=<%= @running.id %>></div>
