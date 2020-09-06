@@ -19,6 +19,7 @@
                 <td>{{ e.strike }}</td>
                 <td>{{ e.foul }}</td>
                 <td>{{ e.ball_strike }}</td>
+                <td @click="destroyActness(e.id)">Destroy</td>
             </tr>
             </tbody>
         </table>
@@ -27,12 +28,23 @@
 
 <script>
     import axios from 'axios';
+    import {reject} from "lodash";
 
     export default {
         data: function () {
             return {
                 actnesses: []
             }
+        },
+        methods: {
+          destroyActness(id) {
+            axios.delete('api/v1/actnesses/' + id)
+                .then(res => {
+                  if (res.status === 200) {
+                    this.actnesses = reject(this.actnesses,['id', id]);
+                  }
+                });
+          }
         },
         mounted () {
             axios
