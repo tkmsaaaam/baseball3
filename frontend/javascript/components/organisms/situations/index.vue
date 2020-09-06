@@ -23,6 +23,7 @@
                 <td>{{ e.ball_strike }}</td>
                 <td>{{ e.steal_counts }}</td>
                 <td>{{ e.score }}</td>
+                <td @click="destroySituation(e.id)">Destroy</td>
             </tr>
             </tbody>
         </table>
@@ -31,12 +32,23 @@
 
 <script>
     import axios from 'axios';
+    import {reject} from 'lodash';
 
     export default {
         data: function () {
             return {
                 situations: []
             }
+        },
+        methods: {
+          destroySituation(id) {
+            axios.delete('api/v1/situations/' + id)
+              .then(res => {
+                if (res.status === 200) {
+                  this.situations = reject(this.situations,['id', id]);
+                }
+              });
+          }
         },
         mounted () {
             axios
