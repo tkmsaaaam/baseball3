@@ -1,7 +1,6 @@
 <template>
-  <div id="app">
+  <div>
     <table>
-      <tbody>
       <tr>
         <th>Game ID</th>
         <th>Bat Counts</th>
@@ -24,37 +23,28 @@
         <td>{{ situation.steal_counts }}</td>
         <td>{{ situation.score }}</td>
       </tr>
-      </tbody>
     </table>
   </div>
 </template>
 
 <script>
-import axios from 'axios';
+  import axios from 'axios';
 
-export default {
-  props: {
-    situationId: {
-      type: String,
-      required: true,
+  export default {
+    props: {
+      situationId: {
+        type: String,
+        required: true,
+      },
     },
-  },
-  data: function () {
-    return {
-      situation: []
+    data: function () {
+      return {
+        situation: []
+      }
+    },
+    mounted () {
+      axios.get(`/api/v1/situations/${this.situationId}`)
+          .then(response => (this.situation = response.data))
     }
-  },
-  mounted () {
-    axios
-        .get(`/api/v1/situations/${this.situationId}`)
-        .then(response => (this.situation = response.data))
   }
-}
 </script>
-
-<style scoped>
-p {
-  font-size: 2em;
-  text-align: center;
-}
-</style>

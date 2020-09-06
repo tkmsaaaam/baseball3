@@ -1,7 +1,6 @@
 <template>
-  <div id="app">
+  <div>
     <table>
-      <tbody>
       <tr>
         <th>ID</th>
         <th>Ball Type</th>
@@ -20,37 +19,28 @@
         <td>{{ actness.foul }}</td>
         <td>{{ actness.ball_strike }}</td>
       </tr>
-      </tbody>
     </table>
   </div>
 </template>
 
 <script>
-import axios from 'axios';
+  import axios from 'axios';
 
-export default {
-  props: {
-    actnessId: {
-      type: String,
-      required: true,
+  export default {
+    props: {
+      actnessId: {
+        type: String,
+        required: true,
+      },
     },
-  },
-  data: function () {
-    return {
-      actness: []
+    data: function () {
+      return {
+        actness: []
+      }
+    },
+    mounted () {
+      axios.get(`/api/v1/actnesses/${this.actnessId}`)
+          .then(response => (this.actness = response.data))
     }
-  },
-  mounted () {
-    axios
-        .get(`/api/v1/actnesses/${this.actnessId}`)
-        .then(response => (this.actness = response.data))
   }
-}
 </script>
-
-<style scoped>
-p {
-  font-size: 2em;
-  text-align: center;
-}
-</style>
