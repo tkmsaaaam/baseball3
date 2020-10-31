@@ -7,5 +7,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :game
-  enum user_type: { normal: 1, admin: 10 }
+
+  enumerize :user_type, predicates: true, scope: true, in: {
+    normal: 1,
+    admin: 10
+  }
+
+  validates :email, presence: true
+  validates :user_type, presence: true
 end
