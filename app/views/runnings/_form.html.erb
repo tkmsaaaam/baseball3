@@ -21,14 +21,14 @@
 
   <div class="field">
     <%= form.label :place %>
-    <%= form.number_field :place %>
+    <%= form.select :place, collection: Running.place.options %>
     <p>Before Place(Base)</p>
   </div>
 
 
   <div class="field">
     <%= form.label :base_id %>
-    <%= form.number_field :base_id %>
+    <%= form.select :base_id, collection: Running.place.options %>
     <p>After Place(Base)</p>
   </div>
 
