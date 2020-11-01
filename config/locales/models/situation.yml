@@ -1,0 +1,34 @@
+ja:
+  activerecord:
+    models:
+      situation: 打席
+
+    attributes:
+      situation:
+        bat_counts: 打席数
+        inings: 回数
+        actness_results: 結果
+        where_go: 進塁結果
+        ball_counts: 球数
+        ball_strike: カウント
+        rbi: 打点
+        steal_counts: 盗塁数
+        score: 得点
+        game_id: 試合
+
+
+  enumerize:
+    situation:
+      ball_strike:
+        no_and_no: ノーボール、ノーストライク
+        no_and_one: ノーボル、ワンストライク
+        no_and_two: ノーボール、ツーストライク
+        one_nothing: ワンボール、ナッシング
+        one_and_one: ワンボール、ワンストライク
+        one_and_two: ワンボール、ツーストライク
+        two_nothing: ツーボール、ナッシング
+        two_and_one: ツーボール、ワンストライク
+        two_and_two: ツーボール、ツーストライク
+        tree_nothing: スリーボール、ナッシング
+        tree_and_one: スリーボール、ワンストライク
+        tree_and_two: スリーボール、ツーストライク

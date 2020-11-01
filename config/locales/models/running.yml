@@ -1,0 +1,27 @@
+ja:
+  activerecord:
+    models:
+      running: 走塁詳細
+
+    attributes:
+      running:
+        place: 元位置
+        base_id: 進塁位置
+        go_counts: 進塁数
+        reason: 進塁理由
+        situaion_id: 打席
+
+
+  enumerize:
+    running:
+      place:
+        home: ホーム
+        first: ファースト
+        second: セカンド
+        third: サード
+
+      base_id:
+        home: ホーム
+        first: ファースト
+        second: セカンド
+        third: サード
