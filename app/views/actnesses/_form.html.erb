@@ -12,9 +12,9 @@
       <h2><%= pluralize(actness.errors.count, "error") %> prohibited this actness from being saved:</h2>
 
       <ul>
-      <% actness.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% actness.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
