@@ -7,5 +7,13 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :game
-  enum user_type: { normal: 1, admin: 10 }
+
+  enumerize :user_type, predicates: true, scope: true, in: {
+    normal: 1,
+    admin: 10
+  }
+
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
+  validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: VALID_EMAIL_REGEX }
+  validates :user_type, presence: true
 end

@@ -18,12 +18,12 @@
 
   <div class="field">
     <%= form.label :email %>
-    <%= form.text_field :email, value: @user.email %>
+    <%= form.email_field :email, value: @user.email %>
   </div>
 
   <div class="field">
     <%= form.label :user_type %>
-    <%= form.select :user_type, options_for_select(User.user_types.keys), value: @user.user_type %>
+    <%= form.select :user_type, collection: User.user_type.options,  value: @user.user_type %>
   </div>
 
   <div class="actions">

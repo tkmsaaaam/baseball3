@@ -4,9 +4,9 @@
       <h2><%= pluralize(game.errors.count, "error") %> prohibited this game from being saved:</h2>
 
       <ul>
-      <% game.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% game.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -14,10 +14,14 @@
   <div class="field">
     <%= form.label :date %>
     <%= form.date_select :date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
     <% if current_user.admin? %>
-      <%= form.number_field :user_id, value: @user.id%>
+      <%= form.number_field :user_id, value: current_user.id %>
     <% else %>
-      <%= form.hidden_field :user_id, value: @user.id %>
+      <%= form.hidden_field :user_id, value: current_user.id %>
     <% end %>
   </div>
 

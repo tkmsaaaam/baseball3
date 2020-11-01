@@ -12,16 +12,16 @@
       <h2><%= pluralize(actness.errors.count, "error") %> prohibited this actness from being saved:</h2>
 
       <ul>
-      <% actness.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% actness.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
   <div class="field">
     <%= form.label :ball_type %>
-    <%= form.number_field :ball_type %>
+    <%= form.select :ball_type, collection: Actness.ball_type.options %>
   </div>
   <p>Ex)Fast ball = 1 *Written by Table</p>
 
@@ -47,7 +47,7 @@
 
   <div class="field">
     <%= form.label :ball_strike %>
-    <%= form.number_field :ball_strike %>
+    <%= form.select :ball_strike, collection: Actness.ball_strike.options %>
   </div>
 
   <div class="field">

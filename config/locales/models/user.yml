@@ -1,0 +1,18 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+
+    attributes:
+      user:
+        email: メールアドレス
+        user_type: ユーザータイプ
+
+
+
+  enumerize:
+    user:
+      user_type:
+        normal: 一般
+        admin: 管理
+

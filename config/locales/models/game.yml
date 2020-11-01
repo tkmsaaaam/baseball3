@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    models:
+      game: 試合
+
+    attributes:
+      game:
+        user_id: 試合者
+        date: 試合日
